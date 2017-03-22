@@ -241,7 +241,7 @@ class Player {
   }
 
   checkPack() {
-    return this.getPack().join(" ");
+    console.log(this.getPack().join(" "));
   }
 
   takeItem(item) {
@@ -266,6 +266,8 @@ class Player {
       return true;
     }
   }
+
+
 }
 
 /**
