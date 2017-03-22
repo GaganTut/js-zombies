@@ -239,6 +239,21 @@ class Player {
   getMaxHealth() {
     return this._maxHealth;
   }
+
+  checkPack() {
+    return this.getPack().join(" ");
+  }
+
+  takeItem(item) {
+    if (this.getPack().length < 3 || this.getPack().indexOf(item) > 0) {
+      this._pack.push(item);
+      console.log(Item + " has been added to your pack!");
+      return true;
+    } else {
+      console.log("Your pack is full!");
+      return false;
+    }
+  }
 }
 
 /**
