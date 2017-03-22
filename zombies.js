@@ -286,6 +286,19 @@ class Player {
       console.log("That ain't a weapon!");
     }
   }
+
+  eat(itemToEat) {
+    var foodIndex = this.getPack().indexOf(itemToEat);
+    if (itemToEat instanceof Food) {
+      if (foodIndex !== -1) {
+        this.discardItem(itemToEat);
+        this.health += itemToEat.energy;
+        if (this.health > this.getMaxHealth()) {
+          this.health = this.getMaxHealth();
+        }
+      }
+    }
+  }
 }
 
 /**
