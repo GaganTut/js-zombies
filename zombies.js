@@ -307,6 +307,16 @@ class Player {
       this.eat(item);
     }
   }
+
+  equippedWith() {
+    if (this.equipped === false) {
+      console.log("No item is equipped");
+      return false;
+    } else {
+      console.log(this.name + " is equipped with " + this.equipped);
+      return this.equipped.name;
+    }
+  }
 }
 
 /**
