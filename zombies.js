@@ -254,6 +254,18 @@ class Player {
       return false;
     }
   }
+
+  discardItem(item) {
+    var itemIndex = this.getPack().indexOf(item);
+    if (itemIndex === -1) {
+      console.log("You don't have this item in your pack!");
+      return false;
+    } else {
+      var removedItem = this.getPack().splice(itemIndex, 1);
+      console.log(this.name + " has discarded " + removedItem.join(""));
+      return true;
+    }
+  }
 }
 
 /**
