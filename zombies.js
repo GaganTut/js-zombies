@@ -220,7 +220,18 @@ class Food extends Item {
  * @name equippedWith
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
-
+class Player {
+  constructor( name, health, strength, speed ) {
+    this._pack = [];
+    this._maxHealth = health;
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.speed = speed;
+    this.isAlive = true;
+    this.equipped = false;
+  }
+}
 
 /**
  * Class => Zombie(health, strength, speed)
