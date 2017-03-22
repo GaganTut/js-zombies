@@ -423,11 +423,6 @@ class StrongZombie extends Zombie {
  * -----------------------------
  */
 
-/*function RangedZombie(health, strength, speed) {
-  var rangedZombie = new Zombie(health, strength, speed);
-
-  return rangedZombie;
-}*/
 class RangedZombie extends Zombie {
   constructor(health, strength, speed) {
     super(health, strength, speed);
