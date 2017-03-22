@@ -35,7 +35,7 @@ class Item {
  */
 class Weapon extends Item {
   constructor( name, damage ) {
-    super (name);
+    super(name);
     this.damage = damage;
   }
 }
@@ -244,9 +244,9 @@ class Player {
     var packList = this.getPack();
     var nameList = "";
     for (var items in packList) {
-      //nameList += packList.items.name + "\n";
+      nameList += packList[items].name + "\n";
     }
-    console.log(packList);
+    console.log(nameList);
   }
 
   takeItem(item) {
@@ -318,7 +318,7 @@ class Player {
       console.log("No item is equipped");
       return false;
     } else {
-      console.log(this.name + " is equipped with " + this.equipped);
+      console.log(this.name + " is equipped with " + this.equipped.name);
       return this.equipped.name;
     }
   }
