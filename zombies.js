@@ -267,7 +267,25 @@ class Player {
     }
   }
 
-
+  equip(weapon) {
+    var weaponIndex = this.getPack().indexOf(weapon);
+    if (weapon instanceof Weapon) {
+      if(weaponIndex !== -1) {
+        if (this.equipped === false) {
+          this.equipped = weapon;
+          this.discardItem(weapon);
+        } else {
+          this.getPack().splice(weaponIndex, 1, this.equipped);
+          this.equipped = weapon;
+        }
+      } else {
+        console.log("Don't own that weapon!");
+        return false;
+      }
+    } else {
+      console.log("That ain't a weapon!");
+    }
+  }
 }
 
 /**
